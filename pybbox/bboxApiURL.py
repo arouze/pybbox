@@ -50,7 +50,7 @@ class BboxAPIUrl:
         :return: url string
         """
         # Check if the ip is LAN or WAN
-        if net.IPAddress(self.ip).is_private():
+        if net.IPAddress(self.ip).is_ipv4_private_use():
             url = "http://{}".format(self.ip)
             self.authentication_type = BboxConstant.AUTHENTICATION_TYPE_LOCAL
         else:
